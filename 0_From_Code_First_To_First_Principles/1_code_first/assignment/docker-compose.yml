@@ -1,0 +1,17 @@
+# Set the version of docker compose to use
+version: '3.8'
+
+# The containers that compose the project
+services:
+  db:
+    image: postgres:15
+    restart: always
+    container_name: ${DB_CONTAINER_NAME}
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - '${DB_PORT}:5432'
+    volumes: 
+      - ./dddforum-data:/var/lib/postgresql/data
