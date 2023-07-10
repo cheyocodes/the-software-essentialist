@@ -4,3 +4,4 @@ build
 .env
 .env.*
 dddforum-data
+shell-scripts
