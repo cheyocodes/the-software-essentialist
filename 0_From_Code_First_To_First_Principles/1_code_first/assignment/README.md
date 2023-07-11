@@ -23,3 +23,8 @@ docker compose up
 npx prisma migrate dev
 ```
 
+### Open Prisma Studio 
+```
+npx prisma studio
+```
+
