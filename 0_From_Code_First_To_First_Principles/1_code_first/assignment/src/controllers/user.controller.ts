@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 import { validate } from '../middleware/validate.middleware';
+
 import { 
     createUserSchema,
     editUserSchema,
@@ -9,8 +10,10 @@ import {
 
 import { 
     createUserRoute,
-    editUserRoute
+    editUserRoute,
+    getUserRoute
 } from '../routes/user';
+
 
 
 const router = Router(); 
@@ -23,6 +26,11 @@ router.post('/new', [
 router.post('/edit/:userId', [
     validate(editUserSchema), 
     editUserRoute
+]);
+
+router.get('/', [
+    validate(getUserSchema), 
+    getUserRoute
 ]);
 
 export default router;
