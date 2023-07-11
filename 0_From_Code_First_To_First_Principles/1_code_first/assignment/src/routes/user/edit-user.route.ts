@@ -1,5 +1,6 @@
-import { HttpException } from "../../utils/exceptions/http.exception";
 import { NextFunction, Request, Response } from "express";
+
+import { HttpException } from "../../utils/exceptions/http.exception";
 import { editUser, getUserById } from "../../models/user";
 
 export const editUserRoute = async (
