@@ -16,12 +16,12 @@ export const validate = (schema: AnyZodObject) => {
       return next();
     } catch (err) {
     
-        if (err instanceof ZodError) {
-            next(new HttpException({
-                message: 'ValidationError',
-                statusCode: 400
-            }))
-        }
+      if (err instanceof ZodError) {
+        next(new HttpException({
+          message: 'ValidationError',
+          statusCode: 400
+        }))
+      }
     }
   };
 };
